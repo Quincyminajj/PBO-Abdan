@@ -1,0 +1,41 @@
+MariaDB [obat]> insert into dbobat(kdobat,nama,berat,bentuk)values('001','bodrex','10mg','tablet');
+ERROR 1062 (23000): Duplicate entry '1' for key 'kdobat'
+MariaDB [obat]> insert into dbobat(kdobat,nama,berat,bentuk)values('002','bodrex','10mg','tablet');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [obat]> insert into dbobat(kdobat,nama,berat,bentuk)values('003','amoxcylyn','9mg','tablet');
+Query OK, 1 row affected (0.008 sec)
+
+MariaDB [obat]> insert into dbobat(kdobat,nama,berat,bentuk)values('004','dumolex','2mg','tablet');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [obat]> insert into dbobat(kdobat,nama,berat,bentuk)values('005','xanax','5mg','tablet');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [obat]> select * from dbobat;
++----+--------+-------------+-------+--------+
+| id | kdobat | nama        | berat | bentuk |
++----+--------+-------------+-------+--------+
+|  1 |      1 | paracetamol | 10mg  | tablet |
+|  3 |      2 | bodrex      | 10mg  | tablet |
+|  4 |      3 | amoxcylyn   | 9mg   | tablet |
+|  5 |      4 | dumolex     | 2mg   | tablet |
+|  6 |      5 | xanax       | 5mg   | tablet |
++----+--------+-------------+-------+--------+
+5 rows in set (0.000 sec)
+
+MariaDB [obat]> delete from dbobat where id='3';
+Query OK, 1 row affected (0.008 sec)
+
+MariaDB [obat]> select * from dbobat;
++----+--------+-------------+-------+--------+
+| id | kdobat | nama        | berat | bentuk |
++----+--------+-------------+-------+--------+
+|  1 |      1 | paracetamol | 10mg  | tablet |
+|  4 |      3 | amoxcylyn   | 9mg   | tablet |
+|  5 |      4 | dumolex     | 2mg   | tablet |
+|  6 |      5 | xanax       | 5mg   | tablet |
++----+--------+-------------+-------+--------+
+4 rows in set (0.000 sec)
+
+MariaDB [obat]>
